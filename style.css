@@ -1,0 +1,355 @@
+/*CSS FOR GENERAL*/
+
+* {
+  margin: 0;
+  padding: 0;
+  color: #242424;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+.Section-Title {
+  font-weight: 700;
+  font-size: 24px;
+  text-align: center;
+  padding: 24px 0;
+}
+
+.Purple {
+  color: #6030b1;
+  font-weight: 700;
+}
+
+.Row {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/*CSS FOR NAVIGATION BAR*/
+
+nav {
+  width: 100%;
+  height: 100px;
+  padding: 0 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Personal-Logo {
+  font-size: 20px;
+  color: #6030b1;
+  font-weight: 700;
+}
+
+.Nav-Link-Container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.Nav-Links {
+  margin: 0 12px;
+  font-size: 16px;
+  position: relative;
+}
+
+.Link-Hover-Effect::after {
+  content: "";
+  width: 10%;
+  height: 3px;
+  bottom: -3px;
+  right: 0;
+  opacity: 0;
+  position: absolute;
+  background-color: #242424;
+  transition: all 0.3s;
+}
+
+.Link-Hover-Effect:hover::after {
+  width: 100%;
+  opacity: 1;
+  left: 0;
+}
+
+.Nav-Link-Primary {
+  color: white;
+  padding: 8px 20px;
+  background-color: #6030b1;
+  border-radius: 20px;
+  transition: all 300ms ease;
+}
+
+.Nav-Link-Primary:hover {
+  filter: brightness(1.2);
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+/*CSS FOR ABOUT ME INFORMATION*/
+
+.About-Me-Info-Wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.About-Me-Info-Para {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-bottom: 12px;
+}
+
+.Personal-Icons {
+  margin: 0 12px;
+}
+
+/*To Make The Landing-Page Take 100% Of The Height. Do The Following:**/
+/*Flex: 1; Means That The Section Landing-Page Grows To Fill The Min-Height Of 100vh*/
+
+#Landing-Page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.Flex-1 {
+  flex: 1;
+}
+
+.Flex {
+  display: flex;
+}
+
+/*To Make The Undraw-Image Take The Remaining Height Of The Landing-Page, Do The Following: **/
+/*Flex: 1; Means That The Section Landing-Page Grows To Fill The Min-Height Of 100vh*/
+
+.About-Me-Container {
+  display: flex;
+  flex-direction: column;
+}
+
+.Undraw-Image-Wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.Undraw-Image {
+  width: 100%;
+}
+
+/*CSS FOR TECHNOLOGY STACK*/
+/*Z-Index Refers To The Z Axis Perpendicular To The Screen And The Z-Index Value Determines The Numbering Of Layers*/
+/*The Code Below Creates A Grey Overlay With The Text About The Project Whilst Also Bluring The Project Image*/
+/*To Create The Effect Of The Text Sliding Up And Down, You Want To Use A Preset Bottom Value And Transition To Top*/
+
+#Languages {
+  background-color: #f8f8f8;
+}
+
+.Language-List {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.Languages {
+  width: 25%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+  transition: all 300ms ease;
+}
+
+.Language-Image {
+  height: 80%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.Language-Title {
+  opacity: 0;
+  font-size: 16px;
+  font-weight: normal;
+  transition: all 300ms ease;
+}
+
+.Languages:hover {
+  .Language-Image {
+    filter: brightness(0.8);
+    transform: scale(0.8);
+  }
+  .Language-Title {
+    opacity: 1;
+  }
+}
+
+/*CSS FOR PROJECTS*/
+
+.Project {
+  margin-top: 48px;
+  margin-bottom: 130px;
+  position: relative;
+}
+
+.Project-List {
+  padding: 24px;
+}
+
+.Project-Image-Wrapper {
+  display: flex;
+  overflow: hidden;
+  z-index: 1;
+  border-radius: 20px;
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.45);
+}
+
+.Project-Overlay {
+  height: 100%;
+  width: 100%;
+  bottom: 0;
+  opacity: 0;
+  z-index: 2;
+  position: absolute;
+  border-radius: 20px;
+  background-color: #1c1d25;
+  transition: all 300ms ease;
+}
+
+.Project-Info {
+  z-index: 3;
+  opacity: 0;
+  text-align: left;
+  top: 60%; left: 75px;
+  position: absolute;
+  transition: all 300ms ease;
+}
+
+.Project-Para {
+  max-width: 400px;
+  margin-top: 8px;
+  color: white;
+}
+
+.Project-Title{
+  color: white;
+  text-align: left;
+}
+
+.Project-Image {
+  width: 100%;
+  transition: all 300ms ease;
+}
+
+.Project:hover {
+  .Project-Image {
+    filter: blur(5px);
+    transform: scale(1.1);
+  }
+  .Project-Overlay {
+    opacity: 0.7;
+  }
+  .Project-Info {
+    opacity: 1;
+    top: 40%;
+  }
+}
+
+/*RESPONSIVE DESIGN*/
+
+@media (max-width:600px) {
+  nav {
+    padding: 0 12px;
+  }
+
+  .Nav-Links:nth-child(1), .Nav-Links:nth-child(2){
+    display: none;
+  }
+
+  .Personal-Logo {
+    margin: 0 12px;
+  }
+
+  .About-Me-Info-Para {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-bottom: 12px;
+  }
+
+  .Section-Title {
+    font-size: 20px;
+  }
+
+  .Language-List {
+    display: flex;
+    justify-content: center;
+  }
+
+  .Language-Title {
+    font-size: 16px;
+  }
+
+  .Languages {
+    width: calc(100%/3);
+  }
+
+  .Project-Title {
+    font-size: 20px;
+    font-weight: normal;
+  }
+
+  .Project-Para {
+    max-width: 300px;
+    font-size: 16px;
+  }
+
+  .Project:hover .Project-Info{
+    top: 33%;
+  }
+}
+
+@media (max-width:480px) {
+  .About-Me-Info-Para {
+    width: 100%;
+    max-width: 325px;
+    margin: 0 auto;
+    margin-bottom: 12px;
+  }
+  .Languages {
+    width: calc(100%/2);
+  }
+
+  .Language-Image {
+    width: 70%;
+    height: 70%;
+  }
+
+  .Project-Title {
+    font-size: 20px;
+    font-weight: normal;
+  }
+
+  .Project-Para {
+    max-width: 250px;
+    font-size: 12px;
+  }
+
+  .Project:hover .Project-Info{
+    top: 30%;
+    left: 10%;
+  }
+
+}
